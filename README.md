@@ -1,0 +1,2 @@
+Norozi Chappal – Handcrafted Traditional Footwear from Pakistan
+Discover the timeless elegance of Norozi Chappal, a unique blend of tradition and craftsmanship. Handcrafted by skilled artisans in Pakistan, our chappals offer unmatched quality, comfort, and style. Whether you're looking for a classic design or a modern twist on traditional footwear, Norozi Chappal is your go-to destination for authentic, durable, and stylish footwear. Step into tradition, walk with pride.
