@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .cart-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .item-details {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .decrease, .increase {
+            background-color:rgb(29, 27, 27);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .decrease:hover, .increase:hover {
+            background-color: black;
+        }
+
+        .remove-btn {
+            color: red;
+            cursor: pointer;
+        }
+
+        .total {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .checkout-btn {
+            display: block;
+            background-color: rgb(29, 27, 27);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+
+        <div class="cart-item">
+            <img src="images/back.jpg" alt="Product 1">
+            <div class="item-details">
+                <p>Product 1</p>
+                <p class="price">$20.00</p>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" readonly>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+            <div class="remove-btn"><i class="fas fa-trash"></i></div>
+        </div>
+
+        <div class="cart-item">
+            <img src="images/backs.jpg" alt="Product 2">
+            <div class="item-details">
+                <p>Product 2</p>
+                <p class="price">$15.00</p>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" readonly>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+            <div class="remove-btn"><i class="fas fa-trash"></i></div>
+        </div>
+
+        <div class="total">Total: $35.00</div>
+        <a href="checkout.html" id="checkoutButton">Proceed to Checkout</a>
+
+    </div>
+
+    <script>
+        // Function to calculate the total price
+        function calculateTotal() {
+            let total = 0;
+            const cartItems = document.querySelectorAll('.cart-item');
+
+            cartItems.forEach(item => {
+                const price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                total += price * quantity;
+            });
+
+            document.querySelector('.total').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        // Event listeners for increase/decrease buttons and remove button
+        document.querySelectorAll('.increase').forEach(button => {
+            button.addEventListener('click', function() {
+                const quantityInput = this.previousElementSibling;
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                calculateTotal();
+            });
+        });
+
+        document.querySelectorAll('.decrease').forEach(button => {
+            button.addEventListener('click', function() {
+                const quantityInput = this.nextElementSibling;
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                    calculateTotal();
+                }
+            });
+        });
+
+        document.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.cart-item').remove();
+                calculateTotal();
+            });
+        });
+
+        // Checkout button functionality
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            alert("Proceeding to checkout...");
+            // Here you would typically redirect to a checkout page or handle the checkout logic
+            // For example: window.location.href = 'checkout.html';
+        });
+
+        // Initial total calculation
+        calculateTotal();
+    </script>
+</body>
+</html>

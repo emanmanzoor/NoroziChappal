@@ -1,0 +1,977 @@
+   /* Navbar Styling */
+   .navbar {
+    background-color: transparent;
+    padding: 15px;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.navbar-brand {
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Icon Styling */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-icons a {
+    margin-left: 20px;
+    color: #333;
+    font-size: 24px; /* Increased font size */
+    padding: 10px;   /* Added padding */
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar-icons a:hover {
+    color: grey;
+}
+
+/* Hover Text Styling */
+.navbar-icons a .hover-text {
+    display: none;
+    position: absolute;
+    bottom: -30px; /* Position below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.navbar-icons a:hover .hover-text {
+    display: block;
+}
+
+/* Offcanvas Side Navigation */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: grey;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Button Styles */
+.btn-login, .btn-register {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+a h1 {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.3s color;
+    color: black;
+}
+
+
+
+.navbar-brand {
+    text-decoration: none; /* Ensure no underline on navbar brand */
+}
+
+.navbar-brand h1 {
+    font-size: 2.5em; /* Adjust the size as needed */
+    font-weight: bold; /* Make it bold */
+    color: black; /* Change the color to your brand color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Optional: add a shadow effect */
+    margin: 0; /* Remove default margin */
+    transition: transform 0.3s ease; /* Transition for the scale effect */
+}
+
+.navbar-brand:hover h1 {
+    transform: scale(1.05); /* Scale the h1 slightly on hover */
+}
+
+
+
+#firsti {
+    font-size: 20px;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    #firsti {
+        font-size: 20px;
+        /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    #firsti {
+        font-size: 16px;
+        /* Adjust font size for small screens */
+    }
+}
+
+
+    body {
+        background-color: white;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .hero-section {
+        display: flex;
+        align-items: center; /* Center aligns items vertically */
+        height: 100vh;
+        width: 100%;
+        padding-top: 50px; /* Push down both image and text */
+        padding-left: 20px; /* Optional: add padding on the left */
+    }
+    
+    .hero-image {
+        flex: 1; /* Image will take one part of the flex container */
+        background-repeat: no-repeat;
+        background-position: center; /* Center the image */
+        background-size: cover; /* Cover the div */
+        height: 100%; /* Make it full height */
+    }
+    
+   .hero-text {
+    max-width: 400px; /* Limit the width of the text */
+    padding: 80px 20px 20px; /* Increase top padding to push text down further */
+    text-align: left; /* Align text to the left */
+}
+    
+    .hero-text h3 {
+        font-weight: bolder;
+        margin-bottom: 10px;
+        color: black;
+        font-size: 2.5em; /* Increase the size of the h3 text */
+    }
+    
+    .hero-text h1 {
+        color: black;
+        font-size: 3em; /* Increase the size of the h1 text */
+    }
+    
+    .icon-containers {
+        display: flex; /* Use flexbox for horizontal alignment */
+        justify-content: flex-start; /* Align icons to the start */
+        margin-top: 20px; /* Add some space above the icons */
+    }
+    
+    .icon-containers i {
+        color: black; /* Change the icon color to match your branding */
+    }
+    
+    /* Optional Media Query */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column; /* Stack elements vertically on small screens */
+        }
+        .hero-image {
+            height: 300px; /* Adjust height for smaller screens */
+        }
+    }
+    .section-title {
+        font-family: 'Georgia', serif; /* A more elegant font for the title */
+        font-size: 2.5em; /* Larger font size */
+        color: #333; /* Dark color for better readability */
+        margin-bottom: 20px; /* Space below the title */
+    }
+    
+    .section-paragraph {
+        font-family: 'Verdana', sans-serif; /* A clean, modern font for paragraphs */
+        font-size: 1.1em; /* Slightly larger font size */
+        line-height: 1.6; /* Better line spacing for readability */
+        color: #555; /* Softer color for the paragraph */
+        margin-bottom: 15px; /* Space between paragraphs */
+    }
+    img {
+        width: 100%; /* Ensures the images take the full width of their parent column */
+        height: auto; /* Maintains the aspect ratio of the images */
+        border-radius: 10px; /* Optional: Adds rounded corners to the images */
+    }
+    .vertical-line {
+        width: 2px; /* Width of the line */
+        background-color: #333; /* Color of the line */
+        height: 0; /* Start height at 0 */
+        transition: height 1s ease; /* Slow transition for height */
+    }
+    
+    .row:hover .vertical-line {
+        height: 100%; /* Full height on hover */
+        background-color: #555; /* Change color on hover */
+    }
+    
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-100%); /* Start from the left */
+            opacity: 0; /* Invisible at the start */
+        }
+        100% {
+            transform: translateX(0); /* End at the original position */
+            opacity: 1; /* Fully visible */
+        }
+    }
+    
+    .img-fluid {
+        animation: slideIn 1s forwards; /* Slow down the slide-in animation */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for transform and shadow */
+    }
+    
+    .col-5 {
+        animation: slideIn 1s forwards; /* Slow down the slide-in animation */
+        animation-delay: 0.2s; /* Delay for the second column */
+    }
+    
+    /* Hover effect for images */
+    .col-5:hover .img-fluid {
+        transform: scale(1.05); /* Slightly scale up the image */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    }
+    .position-relative {
+        position: relative; /* Make parent position relative */
+    }
+    
+    .original-img {
+        display: block; /* Ensure it behaves like a block element */
+        transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for zoom and fade */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .hover-img {
+        display: none; /* Hide the hover image by default */
+        position: absolute; /* Position it absolutely within the parent */
+        top: 0; /* Align it to the top */
+        left: 0; /* Align it to the left */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        opacity: 0; /* Start invisible */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Fade and scale transition */
+    }
+    
+    .col-5:hover .hover-img {
+        display: block; /* Show the hover image on hover */
+        opacity: 1; /* Fade in */
+        transform: translateY(0) rotate(0deg); /* Reset position and rotation */
+    }
+    
+    .col-5:hover .original-img {
+        opacity: 0; /* Fade out the original image */
+        transform: scale(1.1) rotate(-5deg); /* Zoom in and rotate slightly */
+    }
+    .position-relative {
+        position: relative; /* Make parent position relative */
+    }
+    
+    .original-img {
+        display: block; /* Ensure it behaves like a block element */
+        transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for zoom and fade */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .hover-img {
+        display: none; /* Hide the hover image by default */
+        position: absolute; /* Position it absolutely within the parent */
+        top: 0; /* Align it to the top */
+        left: 0; /* Align it to the left */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        opacity: 0; /* Start invisible */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Fade and scale transition */
+    }
+    
+    .col-5:hover .hover-img {
+        display: block; /* Show the hover image on hover */
+        opacity: 1; /* Fade in */
+        transform: translateY(0) rotate(0deg); /* Reset position and rotation */
+    }
+    
+    .col-5:hover .original-img {
+        opacity: 0; /* Fade out the original image */
+        transform: scale(1.1) rotate(-5deg); /* Zoom in and rotate slightly */
+    }
+    .position-relative {
+        position: relative; /* Make parent position relative */
+    }
+    
+    .original-img {
+        display: block; /* Ensure it behaves like a block element */
+        transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for zoom and fade */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .hover-img {
+        display: none; /* Hide the hover image by default */
+        position: absolute; /* Position it absolutely within the parent */
+        top: 0; /* Align it to the top */
+        left: 0; /* Align it to the left */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        opacity: 0; /* Start invisible */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Fade and scale transition */
+    }
+    
+    .col-5:hover .hover-img {
+        display: block; /* Show the hover image on hover */
+        opacity: 1; /* Fade in */
+        transform: translateY(0) rotate(0deg); /* Reset position and rotation */
+    }
+    
+    .col-5:hover .original-img {
+        opacity: 0; /* Fade out the original image */
+        transform: scale(1.1) rotate(-5deg); /* Zoom in and rotate slightly */
+    }
+    .position-relative {
+        position: relative; /* Make parent position relative */
+    }
+    
+    .original-img {
+        display: block; /* Ensure it behaves like a block element */
+        transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for zoom and fade */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .hover-img {
+        display: none; /* Hide the hover image by default */
+        position: absolute; /* Position it absolutely within the parent */
+        top: 0; /* Align it to the top */
+        left: 0; /* Align it to the left */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        opacity: 0; /* Start invisible */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Fade and scale transition */
+    }
+    
+    .col-5:hover .hover-img {
+        display: block; /* Show the hover image on hover */
+        opacity: 1; /* Fade in */
+        transform: translateY(0) rotate(0deg); /* Reset position and rotation */
+    }
+    
+    .col-5:hover .original-img {
+        opacity: 0; /* Fade out the original image */
+        transform: scale(1.1) rotate(-5deg); /* Zoom in and rotate slightly */
+    }
+    .position-relative {
+        position: relative; /* Make parent position relative */
+    }
+    
+    .original-img {
+        display: block; /* Ensure it behaves like a block element */
+        transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for zoom and fade */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .hover-img {
+        display: none; /* Hide the hover image by default */
+        position: absolute; /* Position it absolutely within the parent */
+        top: 0; /* Align it to the top */
+        left: 0; /* Align it to the left */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        opacity: 0; /* Start invisible */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Fade and scale transition */
+    }
+    
+    .col-5:hover .hover-img {
+        display: block; /* Show the hover image on hover */
+        opacity: 1; /* Fade in */
+        transform: translateY(0) rotate(0deg); /* Reset position and rotation */
+    }
+    
+    .col-5:hover .original-img {
+        opacity: 0; /* Fade out the original image */
+        transform: scale(1.1) rotate(-5deg); /* Zoom in and rotate slightly */
+    }
+    .col-5:hover .original-img {
+        opacity: 0; /* Fade out the original image */
+        transform: scale(1.1) rotate(-5deg); /* Zoom in and rotate slightly */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on original */
+    }
+    
+    .col-5:hover .hover-img {
+        display: block; /* Show the hover image on hover */
+        opacity: 1; /* Fade in */
+        transform: translateY(0) rotate(0deg); /* Reset position and rotation */
+        filter: brightness(0.9); /* Darken the hover image */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+    }
+    .price {
+        text-align: center; /* Center align the price text */
+    }
+    
+    .original-price {
+        text-decoration: line-through; /* Add strikethrough effect */
+        color: #888; /* Gray color for the original price */
+        font-size: 1.2em; /* Slightly smaller size for original price */
+        margin-right: 10px; /* Space between prices */
+    }
+    
+    .discounted-price {
+        font-size: 1.5em; /* Increase size for the discounted price */
+        color: #FF5733; /* Different color for discounted price */
+        font-weight: bold; /* Make discounted price bold */
+    }
+    .icon-container {
+        position: absolute; /* Position absolutely within the parent */
+        top: 10px; /* Adjust to position icons at the top */
+        left: 10px; /* Adjust to position icons */
+        display: flex; /* Use flexbox for alignment */
+        gap: 10px; /* Space between icons */
+        opacity: 0; /* Initially hide the icons */
+        transition: opacity 0.3s; /* Smooth transition for hover */
+    }
+    
+    .position-relative:hover .icon-container {
+        opacity: 1; /* Show icons when hovering over the parent */
+    }
+    
+    .icon-container {
+        position: absolute; /* Position absolutely within the parent */
+        top: 10px; /* Adjust to position icons at the top */
+        left: 10px; /* Adjust to position icons */
+        display: flex; /* Use flexbox for alignment */
+        gap: 10px; /* Space between icons */
+        opacity: 0; /* Initially hide the icons */
+        transition: opacity 0.3s; /* Smooth transition for hover */
+    }
+    
+    .position-relative:hover .icon-container {
+        opacity: 1; /* Show icons when hovering over the parent */
+    }
+    
+    .icon-container {
+        position: absolute; /* Position absolutely within the parent */
+        top: 10px; /* Adjust to position icons at the top */
+        left: 10px; /* Adjust to position icons */
+        display: flex; /* Use flexbox for alignment */
+        gap: 10px; /* Space between icons */
+        opacity: 0; /* Initially hide the icons */
+        transition: opacity 0.3s; /* Smooth transition for hover */
+    }
+    
+    .position-relative:hover .icon-container {
+        opacity: 1; /* Show icons when hovering over the parent */
+    }
+    
+    .icon-container {
+        position: absolute; /* Position absolutely within the parent */
+        top: 10px; /* Adjust to position icons at the top */
+        left: 10px; /* Adjust to position icons */
+        display: flex; /* Use flexbox for alignment */
+        gap: 20px; /* Space between icons */
+        opacity: 0; /* Initially hide the icons */
+        transition: opacity 0.3s; /* Smooth transition for hover */
+    }
+    
+    .position-relative:hover .icon-container {
+        opacity: 1; /* Show icons when hovering over the parent */
+    }
+    
+    .icon-container i {
+        font-size: 28px; /* Increased size for better visibility */
+        color: rgba(135, 137, 134, 1); /* Initial color matching background */
+        background-color: transparent; /* No background initially */
+        padding: 10px; /* Padding around icons */
+        border-radius: 50%; /* Round shape for icons */
+        transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+        cursor: pointer; /* Change cursor to pointer on hover */
+    }
+    
+    .icon-container i:hover {
+        color: white; /* Change icon color to white on hover */
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background on hover */
+    }
+    
+    /* Tooltip Style */
+    .icon-container i::after {
+        content: attr(title); /* Use the title attribute for tooltip */
+        position: absolute; /* Position absolutely */
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background for tooltip */
+        color: white; /* Text color */
+        padding: 10px; /* Padding around tooltip text */
+        border-radius: 5px; /* Round corners for the tooltip */
+        font-size: 14px; /* Increase the font size for better visibility */
+        font-family: 'Roboto', sans-serif; /* Use the selected font */
+        left: 50%; /* Center the tooltip */
+        transform: translateX(-50%); /* Adjust to center */
+        bottom: 40px; /* Position above the icon */
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s; /* Smooth transition */
+        pointer-events: none; /* Prevent interaction */
+        white-space: nowrap; /* Prevent line break in tooltip */
+    }
+    
+    .icon-container i:hover::after {
+        opacity: 1; /* Show tooltip on hover */
+    }
+    
+    .img-fluid {
+        width: 100%; /* Ensures the images take the full width of their parent column */
+        height: auto; /* Maintains the aspect ratio of the images */
+        border-radius: 10px; /* Optional: Adds rounded corners to the images */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for transform and shadow */
+    }
+    
+    .select-options {
+        display: none; /* Hide by default */
+        text-align: center; /* Center align the text */
+        font-size: 1.2em; /* Font size for the text */
+        margin-top: 10px; /* Space above the text */
+        color: #fff; /* Text color */
+        background-color: rgba(0, 0, 0, 0.7); /* Background color */
+        padding: 5px; /* Padding for the text */
+        border-radius: 5px; /* Rounded corners */
+    }
+    
+    .position-relative:hover .select-options {
+        display: block; /* Show on hover */
+    }
+    
+    .col-5:hover .original-img {
+        background-color: black; /* Change background color on hover */
+    }
+    h2 {
+        font-size: 2.5em; /* Increase font size */
+        font-weight: bolder; /* Ensure the text is bold */
+        color: #333; /* Change text color */
+        text-align: center; /* Center the text */
+        padding: 20px; /* Add padding */
+        margin: 20px 0; /* Add margin for spacing */
+        background-color: #f8f8f8; /* Light background color */
+        border-radius: 10px; /* Rounded corners */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        letter-spacing: 1px; /* Increase letter spacing */
+    }
+    #last {
+        font-size: 2.5em; /* Increase font size */
+        font-weight: bolder; /* Ensure the text is bold */
+        color: #fff; /* Change text color to white */
+        text-align: center; /* Center the text */
+        padding: 20px; /* Add padding */
+        margin: 20px 100px; /* Add margin for spacing */
+        background-color: #333; /* Dark background color */
+        border-radius: 20px; /* Rounded corners */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+        letter-spacing: 1px; /* Increase letter spacing */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+    }
+    
+    #last:hover {
+        background-color: #555; /* Lighter gray on hover */
+        color: #000; /* Change text color to black on hover */
+    }
+    
+    
+    .container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    .section-description {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    
+    .email-input-container {
+        position: relative;
+    }
+    
+    .email-input-container input {
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 1em;
+    }
+    
+    .email-icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #333;
+    }
+    
+    .arrow-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    
+    .arrow-icon:hover {
+        color: #555;
+    }
+    
+    .social-icon {
+        font-size: 3em;
+        margin: 10px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: #333;
+    }
+    
+    .social-icon:hover {
+        transform: scale(1.2);
+        color: #555;
+    }
+    
+    .footer-text {
+        margin-top: 30px;
+        font-size: 1em;
+        color: #555;
+    }
+    
+    .footer-text::before {
+        content: "";
+        display: block;
+        margin: 20px auto;
+        width: 50%;
+        height: 2px;
+        background-color: #ddd;
+    }
+    
+    .input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    
+    .input-container input {
+        padding-left: 20px; /* Adjust this value to position the placeholder text */
+        width: 120%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    
+    .input-container i.fa-envelope {
+        position: absolute;
+        left: 5px;
+        color: #aaa;
+    }
+    
+    .input-container i.fa-arrow-right {
+        position: absolute;
+        right: 10px;
+        color: #aaa;
+    }
+    
+    #map {
+        width: 100%;
+        height: 200px;
+        background-color: #e0e0e0; /* Placeholder for the map */
+    }
+    
+    
+    .input-group {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .input-group-text {
+        background-color: #f8f8f8;
+        border: none;
+        color: #333;
+    }
+    
+    .form-control {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .map-container {
+        margin-top: 20px;
+    }
+    
+    h1, p {
+        margin-bottom: 10px;
+    }
+    
+    h1 {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+    
+    p {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        color: #666;
+    }
+    
+    .container p, .container h1 {
+        transition: transform 0.3s, color 0.3s;
+    }
+    
+    .container p:hover, .container h1:hover {
+        transform: scale(1.05);
+        color: #000;
+    }
+    
+    .fa-brands {
+        transition: transform 0.3s;
+    }
+    
+    .fa-brands:hover {
+        transform: scale(1.1);
+        color: #000;
+    }
+    a {
+        color: inherit; /* Inherits the text color from the parent element */
+        text-decoration: none; /* Removes the underline */
+    }
+    
+    a:hover {
+        color: #000; /* Optional: Add a hover color (black in this case) */
+        text-decoration: underline; /* Optional: Add an underline on hover */
+    }
+    /* Slider container */
+    .slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Slider wrapper for images */
+    .slider-wrapper {
+        display: flex;
+        animation: scroll 40s linear infinite;
+    }
+    
+    /* Captions */
+    .slide-caption {
+        text-align: center;
+        font-size: 16px;
+        color: #333;
+    }
+    
+    /* Keyframes for sliding effect */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+    /* Pause slider on hover */
+    .slider-container:hover .slider-wrapper {
+        animation-play-state: paused;
+    }
+    
+    .shop-now-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: black; /* Button color */
+        color: #fff; /* Text color */
+        text-align: center;
+        border-radius: 5px;
+        font-size: 16px;
+        text-decoration: none; /* Remove underline */
+        transition: background-color 0.3s ease; /* Smooth transition */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for button */
+    }
+    
+    /* Hover effect */
+    .shop-now-btn:hover {
+        background-color: grey; /* Darker pink on hover */
+        color: #fff; /* Keep the text white on hover */
+        text-decoration: none; /* Ensure underline doesn't appear on hover */
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      
+      .column {
+        flex: 1;
+        padding: 10px;
+        position: relative; /* Ensure relative positioning for captions */
+      }
+      
+      .column img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+      }
+      
+      /* Style for captions */
+      .captions {
+        position: absolute;
+        bottom: 10px; /* Position caption at the bottom */
+        left: 50%;
+        transform: translateX(-50%); /* Center text horizontally */
+        background-color:black; /* Semi-transparent background */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        text-align: center;
+        width: fit-content;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+        /* Hover effect */
+    .captions:hover {
+        background-color: grey; /* Darker pink on hover */
+        color: #fff; /* Keep the text white on hover */
+        text-decoration: none; /* Ensure underline doesn't appear on hover */
+    }
+      
+      /* Overlay styles */
+      .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        width: 50%;
+        height: auto;
+      }
+      
+      .overlay-text {
+        margin-top: 20px; /* Adjust margin for spacing */
+        color: #fff;
+        font-size: 24px; /* Increase font size for text */
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Section Styling */
+      .image-grid-section {
+        z-index: 0;
+        position: relative;
+        padding: 10px;
+      }
+      
+
+      
+      .reviews-section {
+        padding: 50px 0;
+        text-align: center;
+        background-color: #f8f8f8; /* Optional background color */
+    }
+    
+    .background-swiper-image h2 {
+        font-family: 'Arial', sans-serif;
+        color: black;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .background-swiper-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        z-index: 0; /* Keep it in the background */
+    }
+    
+    .swiper-container {
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .review-card {
+        background-color: black;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .star-rating {
+        color: #f39c12; /* Gold for stars */
+    }
+    
+    html,body{
+        overflow-x: hidden;
+    }
+
+
+
+
+    
+
+

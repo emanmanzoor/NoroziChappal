@@ -1,0 +1,241 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    /* Ensure the hidden class hides elements properly */
+.hidden {
+    display: none; /* Hide elements */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.modal-content {
+    background-color: #ffffff; /* White background */
+    margin: 15% auto; 
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 400px; /* Fixed width */
+    animation: fadeIn 0.5s ease forwards; /* Fade in animation */
+    text-align: center; /* Centered text */
+}
+
+/* Heading Styles */
+h2 {
+    color: #333; /* Dark text color */
+}
+
+/* Button Styles */
+.modal-btn {
+    background-color: #007bff; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px; /* Space between buttons */
+    transition: background-color 0.3s;
+    width: 100%; /* Full width */
+}
+
+.modal-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Close Button Styles */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input Group Styles */
+.input-group {
+    margin: 15px 0; /* Space between inputs */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+}
+
+/* Centered Icon and Text Below the Button */
+.button-group {
+    display: flex;
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center horizontally */
+    margin: 20px 0; /* Space around the button group */
+}
+html,body{
+    overflow-x: hidden;
+}
+/* Info Text Styles */
+.info-text {
+    font-size: 18px; /* Adjust the font size */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Space above and below the text */
+    font-family: Arial, sans-serif; /* Change font family */
+    font-weight: bold; /* Make the text bold */
+}
+
+
+</style>
+        <title>My Account Modal</title>
+        
+    </head>
+    <body>
+        <p class="info-text">Please Click My Account Button.</p>
+        <!-- Button to open the modal -->
+        <button id="myAccountBtn" class="modal-btn">My Account</button>
+    
+    
+        <!-- My Account Modal -->
+        <div id="myAccountModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2><i class="fas fa-user-circle"></i> My Account</h2>
+                <div id="accountInfo">
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Email:</strong> johndoe@example.com</p>
+                    <div class="button-group">
+                        <button id="editProfileBtn" class="modal-btn">Edit Profile</button>
+                        <button id="orderHistoryBtn" class="modal-btn">Order History</button>
+                        <button id="logoutBtn" class="modal-btn">Logout</button>
+                    </div>
+                </div>
+                
+                <div id="editProfile" class="hidden">
+                    <h3>Edit Profile</h3>
+                    <form id="editProfileForm">
+                        <div class="input-group">
+                            <input type="text" id="editName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="editEmail" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="modal-btn">Save Changes</button>
+                    </form>
+                </div>
+                
+                <div id="orderHistory" class="hidden">
+                    <h3>Order History</h3>
+                    <p>You have no orders yet.</p>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            // Get the modal
+var modal = document.getElementById("myAccountModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myAccountBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+    resetModal(); // Reset modal to initial state
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        resetModal(); // Reset modal to initial state
+    }
+}
+
+// Logout button functionality
+document.getElementById("logoutBtn").onclick = function() {
+    alert("Logging out...");
+    modal.style.display = "none"; // Close the modal
+}
+
+// Edit Profile button functionality
+document.getElementById("editProfileBtn").onclick = function() {
+    document.getElementById("accountInfo").classList.add("hidden");
+    document.getElementById("editProfile").classList.remove("hidden");
+}
+
+// Order History button functionality
+document.getElementById("orderHistoryBtn").onclick = function() {
+    document.getElementById("accountInfo").classList.add("hidden");
+    document.getElementById("orderHistory").classList.remove("hidden");
+}
+
+// Reset modal to initial state
+function resetModal() {
+    document.getElementById("accountInfo").classList.remove("hidden");
+    document.getElementById("editProfile").classList.add("hidden");
+    document.getElementById("orderHistory").classList.add("hidden");
+}
+
+// Handle the edit profile form submission
+document.getElementById("editProfileForm").addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    const name = document.getElementById('editName').value;
+    const email = document.getElementById('editEmail').value;
+
+    // Log to console (you can replace this with your save logic)
+    console.log('Updated Name:', name);
+    console.log('Updated Email:', email);
+
+    // Optionally, you can reset the form and show the account info
+    resetModal();
+});
+
+        </script>
+    </body>
+    </html>
+    
+

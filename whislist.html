@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+    <title>Wishlist</title>
+    <style>
+        /* Basic styles for wishlist page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        .wishlist-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="wishlist-container">
+        <h2>Your Wishlist</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="wishlistItems">
+                <!-- Wishlist items will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the wishlist items from localStorage
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            
+            // Reference to the wishlist items table body
+            const wishlistItemsTableBody = document.getElementById('wishlistItems');
+            
+            // Clear existing items
+            wishlistItemsTableBody.innerHTML = '';
+
+            // Loop through wishlist items and add to table
+            wishlist.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td><button onclick="removeFromWishlist('${item.id}')">Remove</button></td>
+                `;
+                wishlistItemsTableBody.appendChild(row);
+            });
+        });
+
+        // Function to remove item from wishlist
+        function removeFromWishlist(itemId) {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const updatedWishlist = wishlist.filter(item => item.id !== itemId);
+            localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+            location.reload(); // Reload the page to update the displayed wishlist
+        }
+    </script>
+</body>
+</html>

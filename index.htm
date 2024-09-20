@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <nav class="navbar fixed-top">
+        <div class="container-fluid">
+            <!-- Three-line Hamburger Menu (Bootstrap's default icon) -->
+            <button class="navbar-toggler" type="button" onclick="toggleNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Logo next to the hamburger icon -->
+            <a class="navbar-brand" href="#">
+                <h1>Shikari</h1>
+            </a>
+    
+            <!-- Icons on the right side -->
+            <div class="navbar-icons ms-auto">
+                <a href="search.html">
+                    <i class="fa-solid fa-search"></i>
+                    <div class="hover-text">Search</div>
+                </a>
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="hover-text">Cart</div>
+                </a>
+                <a href="whislist.html">
+                    <i class="fa-solid fa-heart"></i>
+                    <div class="hover-text">Wishlist</div>
+                </a>
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="hover-text">Login</div>
+                </a>
+            </div>
+ <!-- Offcanvas Menu (Side Navigation) -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="nav-links" >
+        <a href="home.html">Home</a>
+        <a href="brand.html">The Brand</a>
+        <a href="sale.html">Sale</a>
+        <a href="story.html">Our Story</a>
+        <a href="ContactNav.html">Contact</a>
+        <div class="nav-item dropdown">
+            <a class="nav-link different dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="peshawari.html">Peshawari Chappal</a></li>
+                <li><a class="dropdown-item" href="norozi.html">Norozi Chappal</a></li>
+                <li><a class="dropdown-item" href="quetta.html">Quetta Chappal</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="account-section">
+        <a href="account.html"><i class="fa-solid fa-user"></i> My Account</a>
+        <a href="login.html" id="loginBtn" class="btn-login" style="color: white; background-color: black;">Login</a>
+        <a href="register.html" id="registerBtn" class="btn-register" style="color: white; background-color: black;">Register</a>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+    </nav>
+
+
+   
+    <section class="hero-section">
+        <div class="hero-image" style=" background-image: url('images/back.jpg');"> </div><!-- Image on the left -->
+        <div class="hero-text">
+            <h3 style="margin-left: 12px;">NoroziChappal</h3>
+            <h1>Shoes For Men</h1>
+            <hr>
+            <div class="icon-containers">
+                <!-- Icons related to shoes -->
+                <h1 style="margin-left: 70px;"><b>Shikari</b></h1>
+                
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2 class="py-3 text-center section-title">The reason <b>Norozi Chappal</b> is here today!!</h2>
+            <div class="row py-3">
+                <div class="col">
+                    <p class="section-paragraph">Norozi Chappal, founded in 2010, is an institute working really hard as a bridge to keep afloat the priceless craft that is dying. It makes humans believe that the hero is you. It portrays your ultimate everyday struggle with <span style="font-style: italic;">well yourself</span>. So let's begin this beautiful journey together.</p>
+                    <p class="section-paragraph">Share the happiness and joy of keeping centuries-old traditions alive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2 class="py-3 text-center"><b>Shikari</b></h2>
+            <div class="row py-3 align-items-center">
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 1" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 1. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$69.99</span>
+                        <span class="discounted-price">$49.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+                <div class="col-2 text-center divider">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 2" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 2. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$79.99</span>
+                        <span class="discounted-price">$59.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2 class="py-3 text-center"><b>Shikari</b></h2>
+            <div class="row py-3 align-items-center">
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 1" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 1. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$69.99</span>
+                        <span class="discounted-price">$49.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+                <div class="col-2 text-center divider">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 2" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 2. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$79.99</span>
+                        <span class="discounted-price">$59.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<hr>
+ <div class="slider-container mt-5">
+    <div class="slider-wrapper">
+      <div class="slide" style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/2.jpg" alt="Image 1" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="slide" style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/1.jpg" alt="Image 2" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="slide" style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/3.jpg" alt="Image 3" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="slide" style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/back.jpg" alt="Image 4" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="slide"style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/backs.jpg" alt="Image 5" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="slide"style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/back.jpg" alt="Image 6" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <!-- Repeat images for continuous scrolling -->
+      <div class="slide"style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/backs.jpg" alt="Image 1" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="slide"style="display: flex;flex-direction:column; align-items: center; margin: 10px; ">
+        <img src="images/back.jpg" alt="Image 2" style="width: 200px; margin-bottom: 10px;border-radius: 8px;object-fit: contain;">
+        <p class="slide-caption">NoroziChappal</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+    
+ 
+       
+
+
+
+
+  
+    <section>
+        <div class="container">
+            <h2 class="py-3 text-center"><b>Deals Of The Day</b></h2>
+            <div class="row py-3 align-items-center">
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 1" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 1. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$69.99</span>
+                        <span class="discounted-price">$49.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+                <div class="col-2 text-center divider">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 2" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 2. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$79.99</span>
+                        <span class="discounted-price">$59.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row py-3 align-items-center">
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 1" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 1. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$69.99</span>
+                        <span class="discounted-price">$49.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+                <div class="col-2 text-center divider">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-5 position-relative">
+                    <img src="images/back.jpg" alt="Image 2" class="img-fluid original-img">
+                    <img src="images/backs.jpg" alt="Hover Image" class="img-fluid hover-img">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-star" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <p class="mt-2">This is a brief description of Image 2. It highlights the features and uniqueness of the product.</p>
+                    <p class="price">
+                        <span class="original-price">$79.99</span>
+                        <span class="discounted-price">$59.99</span>
+                    </p>
+                    <p class="select-options">Select Options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="reviews-section">
+        <div class="background-swiper-image"> </div>
+            <h2>Customer Reviews</h2>
+       
+        
+        <!-- Swiper Container -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Review Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <h4 style="color:  #fff;"><b>John Doe</b></h4>
+                        <div class="star-rating">★★★★☆</div>
+                        <p style="font-size: 16px; color: white;">This product exceeded my expectations! Highly recommend.</p>
+                    </div>
+                </div>
+                
+                <!-- Review Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <h4  style="color:  #fff;"><b>Jane Smith</b></h4>
+                        <div class="star-rating">★★★☆☆</div>
+                        <p style="font-size: 16px; color: white;">Decent quality but a bit overpriced.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+    <section>
+        <div class="container">
+            <h2 class="py-3 text-center">You Are Missing It!!</h2>
+            <div class="row py-3">
+                <div class="col">
+                    <h2 id="last"><b>View All Products</b></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <!-- Get It Section -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <h1 style="font-size: 30px;">Get It</h1>
+                    <p>Subscribe to our newsletter by entering your email below. You'll be the first to know about our latest products, special offers, and exclusive deals directly in your inbox. Stay connected and never miss out!</p>
+                    <form action="newsletter_subscription.php" method="POST">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                            <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Information Section -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <h1 style="font-size: 30px;">Information</h1>
+                    <p><a href="location.html" style="color: inherit; text-decoration: none;">Find Our Location</a></p>
+                    <p><a href="store.html" style="color: inherit; text-decoration: none;">See Our Store</a></p>
+                    <p><a href="tel:+03036158042" style="color: inherit; text-decoration: none;">03036158042</a></p>
+                    <p><a href="tel:+03186477170" style="color: inherit; text-decoration: none;">03186477170</a></p>
+                    <p><a href="mailto:Shikariemail.com" style="color: inherit; text-decoration: none;">@Shikariemail.com</a></p>
+                </div>
+    
+                <!-- Policies Section -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <h1 style="font-size: 30px;">Policies</h1>
+                    <p><a href="terms-of-service.html" style="color: inherit; text-decoration: none;">Terms Of Service</a></p>
+                    <p><a href="returns-refunds.html" style="color: inherit; text-decoration: none;">Returns & Refunds</a></p>
+                    <p><a href="shoe-care-tips.html" style="color: inherit; text-decoration: none;">Shoe Care</a></p>
+                    <p><a href="privacy-policy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a></p>
+                    <p><a href="contact.html" style="color: inherit; text-decoration: none;">Contact Information</a></p>
+                </div>
+    
+<!-- Social Icons and Google Maps Section -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="d-flex justify-content-between mb-3">
+        <!-- Facebook Icon linking to KhussaMehal's Facebook Page -->
+        <a href="https://www.facebook.com/khussamehalofficial" target="_blank" style="color: inherit; text-decoration: none;">
+            <i class="fa-brands fa-square-facebook" style="font-size: 4em;"></i>
+        </a>
+        <!-- Twitter Icon linking to NoroziChappal Twitter Profile -->
+        <a href="https://www.twitter.com/NoroziChappal" target="_blank" style="color: inherit; text-decoration: none;">
+            <i class="fa-brands fa-square-twitter" style="font-size: 4em;"></i>
+        </a>
+        <!-- Instagram Icon linking to Regal Shoes Instagram Profile -->
+        <a href="https://www.instagram.com/regalshoespakistan" target="_blank" style="color: inherit; text-decoration: none;">
+            <i class="fa-brands fa-square-instagram" style="font-size: 4em;"></i>
+        </a>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.4419784699085!2d-122.41941508468188!3d37.77492967975905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f194f7bb%3A0x7b2e4b870f8a983d!2sGoogleplex!5e0!3m2!1sen!2sus!4v1617896948927!5m2!1sen!2sus"
+            width="100%" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+            <!-- Footer Section -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p>"© 2010-2024 Shikari (NoroziChappal) | Crafted with ❤️ by <a href="your-portfolio-link.html" target="_blank" style="color: inherit; text-decoration: none;">Eman Manzoor</a>"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <script>var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+});
+
+
+
+                 
+    
+    // Get modal elements
+var modal = document.getElementById("modal");
+var loginBtn = document.getElementById("loginBtn");
+var registerBtn = document.getElementById("registerBtn");
+var closeBtn = document.querySelector(".close");
+
+// Open the modal when the Login button is clicked
+loginBtn.onclick = function() {
+    modal.style.display = "block";
+    document.getElementById("modalTitle").innerText = "Sign In"; // Set the title
+    document.getElementById("modalForm").innerHTML = `
+        <div id="formContent">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Sign In</button>
+        </div>
+    `;
+}
+
+// Open the modal when the Register button is clicked
+registerBtn.onclick = function() {
+    modal.style.display = "block";
+    document.getElementById("modalTitle").innerText = "Register"; // Set the title
+    document.getElementById("modalForm").innerHTML = `
+        <div id="formContent">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Register</button>
+        </div>
+    `;
+}
+
+// Close the modal when the close button is clicked
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Close the modal when clicking anywhere outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+</script>
+    <script src="script.js"></script>
+    
+    
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BearDear - Shop Now</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Flexbox container for sidebar and products */
+        .shop-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            flex: 1;
+            max-width: 250px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+        }
+
+        .sidebar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+        }
+
+        .filters h4 {
+            margin-bottom: 10px;
+        }
+
+        .filters label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .filters input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        /* Price Filter */
+        .price-filter {
+            margin-bottom: 20px;
+        }
+
+        .price-filter input {
+            width: 100%;
+        }
+
+        .price-filter p {
+            margin: 10px 0 0;
+        }
+
+        /* Product List Styles */
+        .product-list {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            margin: 5px 0;
+        }
+
+        /* Cart Message */
+        #cart-message {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .shop-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                max-width: 100%;
+            }
+
+            .product-list {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: calc(100% - 20px);
+            margin: 0 10px 10px 10px;
+        }
+
+        button:hover {
+            background-color: #555; /* Darker shade on hover */
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sale Chappal</h1>
+    </header>
+
+<div class="shop-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Search Here</h3>
+        <input type="text" id="search" placeholder="Search products...">
+        <div class="filters">
+            <h4>Filters</h4>
+            <label><input type="checkbox" class="category" value="Casual"> Casual</label>
+            <label><input type="checkbox" class="category" value="Formal"> Formal</label>
+            <label><input type="checkbox" class="category" value="Special Deals"> Special Deals</label>
+        </div>
+        <h2>Popular Products</h2>
+        <ul>
+            <li>Chappal 1</li>
+            <li>Chappal 2</li>
+            <li>Chappal 3</li>
+        </ul>
+        <div class="price-filter">
+            <h4>Price Range</h4>
+            <input type="range" id="price" min="0" max="1000" step="10">
+            <p>Max Price: $<span id="price-value">1000</span></p>
+        </div>
+    </div>
+
+    <!-- Product List -->
+    <div class="product-list">
+        <!-- Products will be dynamically inserted here -->
+    </div>
+</div>
+
+<!-- Cart Message -->
+<div id="cart-message"></div>
+
+<script>
+    const products = [
+        {
+            name: "Casual Chappal",
+            image: "images/back.jpg", // Path to back.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Stylish and comfortable casual chappal.",
+            price: 300,
+            category: "Casual",
+        },
+        {
+            name: "Formal Chappal",
+            image: "images/3.jpg", // Path to 3.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Elegant formal chappal for special occasions.",
+            price: 500,
+            category: "Formal",
+        },
+        {
+            name: "Special Deal Chappal",
+            image: "images/back.jpg", // Path to back.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Special deal on high-quality chappal.",
+            price: 250,
+            category: "Special Deals",
+        },
+        {
+            name: "Special Deal Chappal",
+            image: "images/back.jpg", // Path to back.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Special deal on high-quality chappal.",
+            price: 250,
+            category: "Special Deals",
+        },
+        {
+            name: "Special Deal Chappal",
+            image: "images/back.jpg", // Path to back.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Special deal on high-quality chappal.",
+            price: 250,
+            category: "Special Deals",
+        },
+        {
+            name: "Special Deal Chappal",
+            image: "images/back.jpg", // Path to back.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Special deal on high-quality chappal.",
+            price: 250,
+            category: "Special Deals",
+        },
+        {
+            name: "Formal Chappal",
+            image: "images/3.jpg", // Path to 3.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Elegant formal chappal for special occasions.",
+            price: 500,
+            category: "Formal",
+        },
+        {
+            name: "Formal Chappal",
+            image: "images/3.jpg", // Path to 3.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Elegant formal chappal for special occasions.",
+            price: 500,
+            category: "Formal",
+        },
+        {
+            name: "Formal Chappal",
+            image: "images/3.jpg", // Path to 3.jpg in the images folder
+            hoverImage: "images/backs.jpg", // Path to backs.jpg for hover
+            description: "Elegant formal chappal for special occasions.",
+            price: 500,
+            category: "Formal",
+        },
+    ];
+
+    // Function to display products
+    function displayProducts(products) {
+        const productList = document.querySelector('.product-list');
+        productList.innerHTML = '';
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p>Price: $${product.price}</p>
+                <button onclick="addToCart('${product.name}')">Add to Cart</button>
+            `;
+
+            // Adding hover image effect
+            productCard.addEventListener('mouseenter', function () {
+                this.querySelector('img').src = product.hoverImage;
+            });
+            productCard.addEventListener('mouseleave', function () {
+                this.querySelector('img').src = product.image;
+            });
+
+            productList.appendChild(productCard);
+        });
+    }
+
+    // Initial display of all products
+    displayProducts(products);
+
+    // Function to filter products by search
+    function searchProducts() {
+        const searchTerm = document.querySelector('input[type="text"]').value.toLowerCase();
+        const searchedProducts = products.filter(product =>
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm)
+        );
+        displayProducts(searchedProducts);
+    }
+
+    // Event listener for search input
+    document.getElementById("search").addEventListener("input", searchProducts);
+
+    // Filter by categories
+    document.querySelectorAll('.category').forEach(checkbox => {
+        checkbox.addEventListener('change', filterByCategory);
+    });
+
+    function filterByCategory() {
+        const selectedCategories = Array.from(document.querySelectorAll('.category:checked')).map(cb => cb.value);
+        const filteredProducts = products.filter(product => selectedCategories.includes(product.category) || selectedCategories.length === 0);
+        displayProducts(filteredProducts);
+    }
+
+    // Function to add to cart (for demonstration)
+    function addToCart(productName) {
+        document.getElementById('cart-message').textContent = productName + " has been added to your cart!";
+        document.getElementById('cart-message').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('cart-message').style.display = 'none';
+        }, 2000);
+    }
+
+    // Update price filter
+    document.getElementById('price').addEventListener('input', function () {
+        const maxPrice = parseInt(this.value);
+        document.getElementById('price-value').textContent = maxPrice;
+
+        const filteredProducts = products.filter(product => product.price <= maxPrice);
+        displayProducts(filteredProducts);
+    });
+</script>
+
+</body>
+</html>

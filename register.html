@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Resetting some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Light background color */
+        }
+
+        /* Registration Container */
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Registration Form */
+        .register-form {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            width: 400px; /* Fixed width */
+            animation: fadeIn 0.5s ease forwards; /* Use the fadeIn animation */
+        }
+
+        /* Heading */
+        h2 {
+            text-align: center;
+            color: #333; /* Dark text color */
+            margin-bottom: 20px; /* Space below heading */
+        }
+
+        .register-icon {
+            margin-right: 8px; /* Space between icon and text */
+            color: #333; /* Icon color */
+        }
+
+        /* Input Group */
+        .input-group {
+            margin: 15px 0; /* Space between inputs */
+            display: flex;
+            align-items: center; /* Center items vertically */
+        }
+
+        .input-group i {
+            margin-right: 10px; /* Space between icon and input */
+            color: #666; /* Icon color */
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            flex-grow: 1; /* Make inputs take full width */
+            padding: 10px;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 14px; /* Font size */
+            transition: border-color 0.3s, transform 0.3s; /* Add transition */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff; /* Change border color on focus */
+            transform: scale(1.02); /* Slightly scale the input */
+        }
+
+        /* Button */
+        button {
+            background-color: rgb(29, 27, 27); /* Primary color */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; /* Full width */
+            font-size: 16px; /* Font size */
+            margin-top: 10px; /* Space above button */
+            transition: background-color 0.3s, transform 0.3s; /* Add transition */
+        }
+
+        button:hover {
+            background-color: black; /* Darker shade on hover */
+            transform: scale(1.05); /* Slightly scale the button on hover */
+        }
+
+        /* Link */
+        p {
+            text-align: center;
+            margin-top: 15px; /* Space above paragraph */
+        }
+
+        a {
+            color: #007bff; /* Primary link color */
+            text-decoration: none; /* No underline */
+            transition: color 0.3s, text-decoration 0.3s; /* Add transition */
+            font-weight: bold; /* Bold text */
+        }
+
+        a:hover {
+            color: #0056b3; /* Change link color on hover */
+            text-decoration: underline; /* Underline on hover */
+            text-shadow: 0 0 3px rgba(0, 123, 255, 0.7); /* Subtle glow effect */
+        }
+
+        /* Error Message */
+        .error {
+            color: red; /* Error text color */
+            font-size: 12px; /* Smaller font size for error messages */
+            margin-top: 5px; /* Space above error messages */
+        }
+    </style>
+    <title>Register Page</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-form">
+            <h2><i class="fas fa-user-plus register-icon"></i>Register</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <div class="error" id="nameError"></div>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <div class="error" id="passwordError"></div>
+                </div>
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Clear previous error messages
+            document.getElementById('nameError').innerText = '';
+            document.getElementById('emailError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+
+            // Validate fields
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            let isValid = true;
+
+            // Name validation
+            if (name === '') {
+                document.getElementById('nameError').innerText = 'Name is required.';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (email === '' || !email.match(emailPattern)) {
+                document.getElementById('emailError').innerText = 'Please enter a valid email.';
+                isValid = false;
+            }
+
+            // Password validation
+            if (password === '' || password.length < 6) {
+                document.getElementById('passwordError').innerText = 'Password must be at least 6 characters.';
+                isValid = false;
+            }
+
+            // If valid, log the data (replace with actual registration logic)
+            if (isValid) {
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('Password:', password);
+                // Optionally, reset the form after submission
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>

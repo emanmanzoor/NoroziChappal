@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Stories</title>
+   <style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.our-stories {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: white;
+    background-color: #333;
+    padding: 20px 30px;
+}
+
+.story-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.story-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.image-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1); /* Makes the image pop out on hover */
+}
+
+.story-content {
+    flex: 1.2;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+.story-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .story-row {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .story-content {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .story-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .story-content p {
+        font-size: 1rem;
+    }
+}
+
+   </style>
+</head>
+<body>
+
+    <section class="our-stories">
+        <header> <h1 class="page-heading">Our Stories</h1></header>
+       
+
+        <div class="story-row">
+            <div class="image-container">
+                <img src="images/brand1.jpg" alt="Story Image 1">
+            </div>
+            <div class="story-content">
+                <h2>Story of Inspiration</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae purus non purus gravida 
+                aliquam. Vivamus vulputate dictum elit a viverra. Maecenas tincidunt erat a libero aliquet 
+                tristique. Donec sit amet magna vel nisl pharetra fermentum a nec sapien.</p>
+            </div>
+        </div>
+
+        <div class="story-row">
+            <div class="image-container">
+                <img src="images/backs.jpg" alt="Story Image 2">
+            </div>
+            <div class="story-content">
+                <h2>Journey to Success</h2>
+                <p>Proin nec magna varius, lacinia augue eget, vehicula odio. Nam ac odio magna. Nullam sit amet 
+                orci nec erat efficitur lacinia. Curabitur aliquam purus nec venenatis pharetra. Ut varius nisl 
+                ut velit malesuada, non hendrerit libero aliquet.</p>
+            </div>
+        </div>
+
+        <div class="story-row">
+            <div class="image-container">
+                <img src="images/brand1.jpg" alt="Story Image 3">
+            </div>
+            <div class="story-content">
+                <h2>Overcoming Challenges</h2>
+                <p>Vestibulum ullamcorper ipsum at felis facilisis, sed interdum magna tincidunt. Aliquam erat 
+                volutpat. Suspendisse lobortis erat in nisi luctus efficitur. Phasellus nec eros libero. In id 
+                interdum risus, sed aliquet velit.</p>
+            </div>
+        </div>
+
+        <div class="story-row">
+            <div class="image-container">
+                <img src="images/back.jpg" alt="Story Image 4">
+            </div>
+            <div class="story-content">
+                <h2>Empowering Communities</h2>
+                <p>Aliquam erat volutpat. Nam eget elit eget libero vehicula aliquet. Sed at turpis sit amet 
+                sapien fringilla tincidunt. Morbi bibendum consectetur risus, eget viverra elit condimentum 
+                sed. Integer a scelerisque est. Duis gravida suscipit dolor, vel placerat dui.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

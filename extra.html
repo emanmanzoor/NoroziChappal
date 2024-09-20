@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Light background color */
+        }
+    
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+        }
+    
+        .login-form {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            width: 400px; /* Fixed width */
+        }
+    
+        h2 {
+            text-align: center;
+            color: #333; /* Dark text color */
+            margin-bottom: 20px; /* Space below heading */
+        }
+    
+        .input-group {
+            margin: 15px 0; /* Space between inputs */
+            display: flex;
+            align-items: center; /* Center items vertically */
+        }
+    
+        input[type="email"],
+        input[type="password"] {
+            flex-grow: 1; /* Make inputs take full width */
+            padding: 10px;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 14px; /* Font size */
+        }
+    
+        button {
+            background-color: rgb(29, 27, 27); /* Primary color */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; /* Full width */
+            font-size: 16px; /* Font size */
+            margin-top: 10px; /* Space above button */
+        }
+    
+        p {
+            text-align: center;
+            margin-top: 15px; /* Space above paragraph */
+        }
+    
+        a {
+            color: #007bff; /* Primary link color */
+            text-decoration: none; /* No underline */
+        }
+    
+        .error {
+            color: red; /* Error message color */
+            margin-top: 10px; /* Space above error message */
+            text-align: center; /* Center the error message */
+        }
+    </style>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h2><i class="fas fa-user-lock"></i>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p class="error" id="errorMessage"></p> <!-- Error message placeholder -->
+                <p>Don't have an account? <a href="register.html">Register here</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Basic validation
+            if (!email || !password) {
+                errorMessage.textContent = 'Please fill in all fields.';
+                return;
+            }
+
+            // Simulated login process (replace this with actual authentication logic)
+            const validEmail = 'user@example.com'; // Simulated valid email
+            const validPassword = 'password123'; // Simulated valid password
+
+            if (email === validEmail && password === validPassword) {
+                // Redirect on successful login (replace with your success URL)
+                window.location.href = 'dashboard.html';
+            } else {
+                // Display error message for invalid credentials
+                errorMessage.textContent = 'Invalid email or password.';
+            }
+        });
+    </script>
+</body>
+</html>
